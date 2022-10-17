@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://bin/StaticPNGSprite.gd" type="Script" id=1]
+[ext_resource path="res://assets/PNGs/1.png" type="Texture" id=2]
+[ext_resource path="res://assets/emotions.png" type="Texture" id=3]
+[ext_resource path="res://bin/StaticPNG.gd" type="Script" id=4]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": false,
+"name": "Non-scared",
+"speed": 3.5
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "Scared",
+"speed": 5.0
+} ]
+
+[node name="StaticPNG" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Emotion" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -16 )
+z_index = -1
+frames = SubResource( 4 )
+animation = "Scared"
+playing = true
+
+[node name="PNGSprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 16, 16 )
+script = ExtResource( 1 )

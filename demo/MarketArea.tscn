@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4, 1.5 )
+
+[sub_resource type="Gradient" id=2]
+interpolation_mode = 2
+offsets = PoolRealArray( 0.064, 0.256, 0.304, 0.30897, 1 )
+colors = PoolColorArray( 0.251472, 0.566258, 0.582156, 0.602544, 0.239216, 0.627451, 0.647059, 0.509804, 0.304, 0.304, 0.304, 1, 0, 0, 0, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture2D" id=3]
+gradient = SubResource( 2 )
+width = 16
+height = 16
+fill_from = Vector2( 1, 1 )
+fill_to = Vector2( 1, 1 )
+
+[node name="MarketArea" type="Node2D"]
+
+[node name="MarketArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MarketArea"]
+position = Vector2( 0, -6 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 3 )
