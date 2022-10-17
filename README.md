@@ -2,6 +2,13 @@
 
 A Halloween game made in godot and C++ (GDNative)
 
+## Table of contents
+
++ [How to play](#How-to-play)
+  + [English](#English)
+  + [Italiano](#Italiano)
++ [Assets I used](#Assets-I-used)
+
 ## How to play
 
 ### English
@@ -35,3 +42,12 @@ Controlli:<br>
 - Frecce Sù / Giù (Naviga tra le opzioni quando vuoi, ad esempio, comprare qualcosa)
 - Invio (Conferma la tua scelta)
 - Se vuoi trovare le persone che possono togliere l'ostacolo, dovrai collidere con loro e, se trovi uno di loro, verrà mostrato un dialogo.
+
+## Assets I used
+
++ [Fantasy rpg Halloween pack](https://franuka.itch.io/fantasy-rpg-halloween-pack)
++ [Pixel art GUI elements](https://mounirtohami.itch.io/pixel-art-gui-elements)
++ [Retro rpg character pack](https://parabellum-games.itch.io/retro-rpg-character-pack)
++ [Modern city](https://emily2.itch.io/modern-city)
++ [Minimalpixel font](https://mounirtohami.itch.io/minimalpixel-font?download)
++ [Emotes-pack](https://www.kenney.nl/assets/emotes-pack)
