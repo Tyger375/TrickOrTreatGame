@@ -1,4 +1,4 @@
-[gd_scene load_steps=211 format=2]
+[gd_scene load_steps=212 format=2]
 
 [ext_resource path="res://bin/gdexample.gdnlib" type="GDNativeLibrary" id=1]
 [ext_resource path="res://assets/Neighborhood/outdoors.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://assets/Candy.png" type="Texture" id=21]
 [ext_resource path="res://bin/NewSweets.gdns" type="Script" id=22]
 [ext_resource path="res://assets/Neighborhood/HalloweenDecorations.png" type="Texture" id=23]
+[ext_resource path="res://StaticPNG.tscn" type="PackedScene" id=24]
 
 [sub_resource type="NativeScript" id=1]
 resource_name = "gdexample"
@@ -4629,6 +4630,34 @@ scale = Vector2( 1.5, 1 )
 position = Vector2( 184, 456 )
 scale = Vector2( 1.5, 1 )
 
+[node name="StaticPNG" parent="Markets" instance=ExtResource( 24 )]
+position = Vector2( 816, 184 )
+z_index = -1
+
+[node name="Emotion" parent="Markets/StaticPNG" index="0"]
+visible = false
+
+[node name="StaticPNG2" parent="Markets" instance=ExtResource( 24 )]
+position = Vector2( 928, 184 )
+z_index = -1
+
+[node name="Emotion" parent="Markets/StaticPNG2" index="0"]
+visible = false
+
+[node name="StaticPNG3" parent="Markets" instance=ExtResource( 24 )]
+position = Vector2( 136, 424 )
+z_index = -1
+
+[node name="Emotion" parent="Markets/StaticPNG3" index="0"]
+visible = false
+
+[node name="StaticPNG4" parent="Markets" instance=ExtResource( 24 )]
+position = Vector2( 184, 424 )
+z_index = -1
+
+[node name="Emotion" parent="Markets/StaticPNG4" index="0"]
+visible = false
+
 [node name="Houses" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -5561,6 +5590,10 @@ energy = 1.25
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.184314, 0.184314, 0.184314, 0.968627 )
 
+[editable path="Markets/StaticPNG"]
+[editable path="Markets/StaticPNG2"]
+[editable path="Markets/StaticPNG3"]
+[editable path="Markets/StaticPNG4"]
 [editable path="PlayerNode"]
 [editable path="Obstacles/Obstacle2"]
 [editable path="Obstacles/Obstacle3"]

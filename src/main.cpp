@@ -200,7 +200,13 @@ public:
     int get_max() { return max; }
     Node2D* get_selected()
     {
-        return Object::cast_to<Node2D>(items[index-1]);
+        if (index == 0)
+            return nullptr;
+        else
+        {
+            Node2D* obj = Object::cast_to<Node2D>(items[index - 1]);
+            return obj;
+        }
     }
 };
 
@@ -512,10 +518,15 @@ public:
                 if (isTrick)
                 {
                     Node2D* selected = options->get_selected();
-                    Label* text = Object::cast_to<Label>(selected->get_child(1));
+                    if (selected != nullptr)
+                    {
+                        Label* text = Object::cast_to<Label>(selected->get_child(1));
 
-                    if (text->get_text() == "trick")
-                        accept_trick();
+                        if (text->get_text() == "trick")
+                            accept_trick();
+                        else
+                            decline_trick();
+                    }
                     else
                         decline_trick();
                     startTimerAnim();
@@ -523,12 +534,15 @@ public:
                 else if (isShop)
                 {
                     Node2D* selected = options->get_selected();
-                    Label* text = Object::cast_to<Label>(selected->get_child(1));
-
-                    const String txt = text->get_text();
-                    if (find(items, String(txt)))
+                    if (selected != nullptr)
                     {
-                        buy(txt);
+                        Label* text = Object::cast_to<Label>(selected->get_child(1));
+
+                        const String txt = text->get_text();
+                        if (find(items, String(txt)))
+                        {
+                            buy(txt);
+                        }
                     }
                     isShop = false;
                 }
